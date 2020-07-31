@@ -54,23 +54,5 @@ module.exports = ({ outputFile, assetFile }) => ({
       // utils: [path.resolve(__dirname, 'src/utils'),'default']
     }),
   ],
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-      minSize: 0,
-      // cacheGroups: {
-      //   Vendors: {
-      //     name: "vendors",
-      //     test: /[\\/]node_modules[\\/]/,
-      //     priority: -10,
-      //   },
-      //   // utils: {
-      //   //   name: "utils",
-      //   //   test: /src[\\/]utils/,
-      //   //   priority: -10,
-      //   // },
-      //   default: false,
-      // },
-    },
-  },
+
 });
