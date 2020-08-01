@@ -3,6 +3,7 @@
 Stylesheet: ベーススタイル
 
 ******************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Kameron&family=Noto+Sans+JP:wght@400;700&display=swap');
 
 body {
   font-family: "Kameron", "Noto Sans JP", sans-serif;
@@ -192,6 +193,26 @@ main{
     @extend .pb-sm;
   }
 }
+
+.bgA{
+  background-image: url(../images/villa-1.jpg);
+}
+.bgB{
+  background-image: url(../images/villa-2.jpg);
+}
+.bgC{
+  background-image: url(../images/villa-3.jpg);
+}
+.bgD{
+  background-image: url(../images/villa-4.jpg);
+}
+.bgE{
+  background-image: url(../images/villa-5.jpg);
+}
+.bgF{
+  background-image: url(../images/villa-6.jpg);
+}
+
 
 .houses {
   @extend .content-width;

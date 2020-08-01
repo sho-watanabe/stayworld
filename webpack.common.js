@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { ProvidePlugin } = require("webpack");
 
+
 module.exports = ({ outputFile, assetFile }) => ({
   entry: { main: "./src/scripts/main.js"},
   output: {
@@ -17,7 +18,7 @@ module.exports = ({ outputFile, assetFile }) => ({
         loader: "babel-loader",
       },
       {
-        test: /\.scss$/,
+        test: /\.css|\.sass|\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
@@ -40,7 +41,10 @@ module.exports = ({ outputFile, assetFile }) => ({
       },
       {
         test: /\.html$/,
-        use: ["html-loader"],
+        use: [
+            "html-loader"
+          ],
+
       },
     ],
   },
@@ -51,8 +55,26 @@ module.exports = ({ outputFile, assetFile }) => ({
     new ProvidePlugin({
       jQuery: "jquery",
       $: "jquery",
-      // utils: [path.resolve(__dirname, 'src/utils'),'default']
-    }),
+      utils: [path.resolve(__dirname, 'src/utils'),'default']
+    })
   ],
-
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      minSize: 0,
+      cacheGroups: {
+        Vendors: {
+          name: "vendors",
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        utils: {
+          name: "utils",
+          test: /src[\\/]utils/,
+          priority: -10,
+        },
+        default: false,
+      },
+    },
+  },
 });
