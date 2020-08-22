@@ -17,6 +17,7 @@ module.exports = ({ outputFile, assetFile }) => ({
         exclude: /node_modules/,
         loader: "babel-loader",
       },
+
       {
         test: /\.css|\.sass|\.scss$/,
         use: [

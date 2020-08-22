@@ -1,7 +1,6 @@
 import '../styles/vendors/bootstrap-reboot.css';
 import '../styles/vendors/swiper.min.css';
 import '../styles/style.scss';
-
 import { ScrollObserver } from './libs/scroll.js';
 import { TextAnimation,TweenTextAnimation } from './libs/text-animation.js';
 import { HeroSlider } from './libs/hero-slider.js';
@@ -24,8 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const _inviewAnimation = function(el,inview){
         if(inview){
             el.classList.add('inview');
+
         }else{
             el.classList.remove('inview');
+
+
         }
     };
 
