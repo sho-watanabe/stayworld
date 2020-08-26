@@ -38,6 +38,15 @@ module.exports = ({ outputFile, assetFile }) => ({
               publicPath: "images",
             },
           },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+              progressive: true,
+              quality: 65,
+              }
+            },
+          },
         ],
       },
       {
